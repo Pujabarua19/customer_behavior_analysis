@@ -1,105 +1,120 @@
 # Data Analytics Project – Python, SQL & Power BI
 
+# Customer Shopping Behavior Analysis
+
 ## Overview
-This project demonstrates a full data analytics workflow from raw data to business insights.  
+This project analyzes customer shopping behavior for a retail business using an end-to-end data analytics workflow.  
+It starts with raw transactional data in CSV format, moves through Python-based EDA and cleaning, uses MySQL for structured analysis with SQL, and finishes with an interactive Power BI dashboard and business recommendations.
 
-It includes:
-- Loading and exploring a dataset in **Python**
-- Performing **Exploratory Data Analysis (EDA)** and **data cleaning**
-- Storing and querying the data using **MySQL**
-- Building an interactive **Power BI dashboard** to present insights
-
-The goal is to showcase my ability to work across the data stack: Python, SQL, and BI tools.
+The goal is to show how I can turn raw customer data into clear, actionable insights for marketing, product, and strategy teams.
 
 ---
 
 ## Dataset
-- **Source:** `data/dataset.csv` (replace with actual source if applicable)
-- **Description:** Tabular data containing information about `<briefly describe: e.g., sales, customers, products, etc.>`.
-- **Key fields:**  
-  - `column_1` – short description  
-  - `column_2` – short description  
-  - `column_3` – short description  
+- **File:** `customer_shopping_behavior.csv`  
+- **Size:** 3,900 purchases, 18 columns  
+- **Key fields:**
+  - Customer: age, gender, location, subscription status  
+  - Purchase: item purchased, category, purchase amount, season, size, color  
+  - Behavior: discount applied, previous purchases, frequency of purchases, review rating  
+  - Logistics: shipping type  
 
-*(You can customize these to match your actual dataset.)*
+Missing values (mainly in review ratings) are handled during the cleaning step in Python.
 
 ---
 
 ## Tools & Technologies
-- **Programming:** Python (Pandas, NumPy, Matplotlib/Seaborn)
-- **Database:** MySQL Server
-- **BI Tool:** Power BI Desktop
-- **Other:** Jupyter Notebook / VS Code
+- **Python** – data loading, EDA, cleaning  
+  - Notebook: `Customer_Shopping_Behavior_Analysis.ipynb`
+- **Database:** MySQL Server  
+  - Queries: `customer_behavior_sql_queries.sql`
+- **Visualization:** Power BI  
+  - Dashboard: `customer_behavior_dashboard.pbix`
+- **Documentation:**  
+  - `Business Problem Document.pdf`  
+  - `Customer Shopping Behavior Analysis.pdf`  
+  - `Customer-Shopping-Behavior-Analysis.pptx`
 
 ---
 
 ## Project Steps
 
-1. **Load Data (Python)**
-   - Read the CSV file into a Pandas DataFrame.
-   - Inspect basic structure (head, info, dtypes, missing values).
+1. **Load & Explore Data (Python)**
+   - Import the CSV into a Pandas DataFrame.
+   - Inspect data types, missing values, and basic statistics.
+   - Understand customer and purchase distributions.
 
-2. **Exploratory Data Analysis (EDA)**
-   - Descriptive statistics (mean, median, distributions).
-   - Univariate and bivariate analysis (histograms, boxplots, correlations).
-   - Identify trends, patterns, and outliers.
+2. **EDA (Exploratory Data Analysis)**
+   - Analyze spending patterns by age, gender, category, and season.
+   - Explore relationships between discounts, reviews, subscriptions, and spend.
+   - Visualize key trends (histograms, bar charts, correlations).
 
-3. **Data Cleaning**
-   - Handle missing values (imputation or removal).
-   - Fix data types, remove duplicates, standardize formats.
-   - Create derived/feature columns if needed.
+3. **Data Cleaning & Preparation**
+   - Handle missing review ratings (e.g., median by category).
+   - Standardize column names and formats.
+   - Remove duplicates and fix inconsistent values.
+   - Create features such as age groups and purchase frequency.
 
-4. **Load into MySQL & SQL Queries**
-   - Create a database and table schema in MySQL.
-   - Load the cleaned dataset into MySQL.
-   - Run SQL queries for:
-     - Filtering and aggregations
-     - Grouped summaries (e.g., by time, category, region)
-     - Joins (if multiple tables are used)
-   - Use these queries to answer specific business questions.
+4. **SQL Analysis in MySQL**
+   - Load the cleaned dataset from Python into a MySQL table.
+   - Use `customer_behavior_sql_queries.sql` to answer business questions, such as:
+     - Revenue by gender and age group  
+     - High-spending customers using discounts  
+     - Top-rated and most-purchased products  
+     - Standard vs. express shipping behavior  
+     - Subscribers vs. non-subscribers and customer segments (New, Returning, Loyal)
 
 5. **Power BI Dashboard**
-   - Connect Power BI to the MySQL database (or cleaned CSV extract).
-   - Build visuals such as:
-     - KPI cards (e.g., total revenue, total customers)
-     - Bar/column charts (e.g., top categories)
-     - Time-series charts (e.g., trends over time)
-     - Slicers/filters for interactive exploration
-   - Design a clean, simple layout focused on decision-making.
+   - Connect Power BI to the MySQL database (or cleaned CSV export).
+   - Build visuals for revenue, orders, and ratings by key segments.
+   - Add slicers for gender, category, shipping type, age group, and subscription status.
 
 ---
 
 ## Dashboard
-- The main Power BI report is located at:  
-  `dashboard/Project_Dashboard.pbix`  
+The **Customer Behavior Dashboard** highlights:
 
-Key pages (examples):
-- **Overview:** High-level KPIs and trends.
-- **Detail Analysis:** Breakdown by category/segment.
-- **Time Insights:** Performance over time.
+- **KPI cards:** number of customers, average purchase amount, average review rating  
+- **Subscription view:** share of customers who subscribe vs. non-subscribers  
+- **Category performance:** revenue and sales by product category  
+- **Age group insights:** revenue and sales by age group  
+- **Shipping comparison:** difference in spend between standard and express shipping  
 
----
-
-## Results & Insights
-Some example insights you might highlight (replace with your real findings):
-
-- **Trend Insight:** e.g., “Sales peak in Q4, with a 25% increase compared to Q1.”
-- **Segment Insight:** e.g., “Category A contributes 40% of total revenue but has the highest return rate.”
-- **Operational Insight:** e.g., “Region X underperforms despite high customer count, indicating lower average order value.”
-
-These results demonstrate how combining Python, SQL, and Power BI can turn raw data into actionable business recommendations.
+The layout is designed to be clean and business-friendly, so non-technical stakeholders can quickly explore customer segments and performance.
 
 ---
 
-## How to Run This Project
+## Results & Business Insights
+Key findings from the analysis include:
 
-### Prerequisites
-- Python 3.x
-- MySQL Server
-- Power BI Desktop
-- Recommended: virtual environment (venv or conda)
+- Certain age groups contribute a higher share of total revenue.  
+- Subscribers and frequent buyers tend to spend more and show stronger loyalty.  
+- Express shipping customers generally have higher average order values than standard shipping users.  
+- A small set of top-rated and most-purchased products drives a significant portion of revenue.  
 
-### 1. Clone the Repository
-```bash
-git clone https://github.com/your-username/your-repo-name.git
-cd your-repo-name
+Based on these insights, recommendations include strengthening subscription and loyalty programs, targeting high-value segments with personalized offers, promoting top-rated products, and optimizing discount strategies.
+
+---
+
+## How to Run the Project
+
+1. **Clone or download the project files** into a local folder.
+
+2. **Run the Python notebook**
+   - Open `Customer_Shopping_Behavior_Analysis.ipynb` in Jupyter or VS Code.
+   - Run all cells to:
+     - Load the CSV
+     - Perform EDA and cleaning
+     - Export the cleaned dataset or load it directly into MySQL
+
+3. **Set up MySQL**
+   - Create a new database (e.g., `customer_behavior`).
+   - Create a table and load the cleaned data.
+   - Open `customer_behavior_sql_queries.sql` in your SQL client and run the queries to reproduce the analysis.
+
+4. **Open the Power BI dashboard**
+   - Open `customer_behavior_dashboard.pbix` in Power BI Desktop.
+   - Update the data source to point to your MySQL database (or cleaned CSV).
+   - Refresh the data to interact with the latest results.
+
+This project is structured to be easy for recruiters and hiring managers to review, while clearly demonstrating practical skills in Python, SQL, and Power BI applied to a real business problem.
