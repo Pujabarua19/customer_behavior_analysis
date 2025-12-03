@@ -1,92 +1,105 @@
-# 👨🏻‍💻Customer Behavior Data Analyst Portfolio Project
-This project represents a complete, industry standard, end-to-end data analytics workflow, designed to mirror the real responsibilities of professional analysts in modern business environments. The project encompasses all critical stages of data analysis, from data preparation and modeling to insight generation, visualization, and reporting.
+# Data Analytics Project – Python, SQL & Power BI
 
-This project is perfect for:
-- 📊 Data Analyst aspirants who want to build a strong **Portfolio Project** for interviews and LinkedIn
-- 📚 Anyone learning Python, SQL, and Power BI
-- 💼 Professionals preparing for interviews in Data Analytics, Data Science or Product Analytics roles
+## Overview
+This project demonstrates a full data analytics workflow from raw data to business insights.  
 
-# **🎥 Watch this [YouTube video](https://www.youtube.com/watch?v=5PrZvPeUw60&list=PLAx-M6Di0SisFJ1rv5M_FRHUlGA5rtUf_&index=3) to implement the full project from scratch:**  
-[![Advanced Data Analysis Portfolio Project using Retail Customer Data](https://github.com/user-attachments/assets/abbb6371-a0b2-4bec-a304-7c7da98658b6)](https://www.youtube.com/watch?v=x8dfQkKTyP0&list=PLAx-M6Di0SisFJ1rv5M_FRHUlGA5rtUf_&index=2)
-🔗 *Link to Video:* [Watch on Youtube](https://www.youtube.com/watch?v=5PrZvPeUw60&list=PLAx-M6Di0SisFJ1rv5M_FRHUlGA5rtUf_&index=3)
+It includes:
+- Loading and exploring a dataset in **Python**
+- Performing **Exploratory Data Analysis (EDA)** and **data cleaning**
+- Storing and querying the data using **MySQL**
+- Building an interactive **Power BI dashboard** to present insights
 
+The goal is to showcase my ability to work across the data stack: Python, SQL, and BI tools.
 
-## 📌 Project Overview
-The goal of this project is to simulate a corporate-grade end-to-end data analytics workflow, demonstrating the ability to translate raw data into strategic business intelligence by:
+---
 
-✅ Data Preparation,Modeling & Exploratory Data Analysis (Python): Clean and transform the raw dataset for analysis.
+## Dataset
+- **Source:** `data/dataset.csv` (replace with actual source if applicable)
+- **Description:** Tabular data containing information about `<briefly describe: e.g., sales, customers, products, etc.>`.
+- **Key fields:**  
+  - `column_1` – short description  
+  - `column_2` – short description  
+  - `column_3` – short description  
 
-✅ Data Analysis (SQL): Simulate business transactions, and run queries to extract insights on customer segments, loyalty, and purchase drivers.
+*(You can customize these to match your actual dataset.)*
 
-✅ Visualization & Insights (Power BI): Build an interactive dashboard that highlights key patterns and trends, enabling stakeholders to make data-driven decisions.
+---
 
-✅ Report and Presentation: Write a clear project report summarizing your key findings and business recommendations. Prepare a presentation that visually communicates insights and actionable recommendations to stakeholders.
+## Tools & Technologies
+- **Programming:** Python (Pandas, NumPy, Matplotlib/Seaborn)
+- **Database:** MySQL Server
+- **BI Tool:** Power BI Desktop
+- **Other:** Jupyter Notebook / VS Code
 
-![Project Workflow](https://github.com/user-attachments/assets/8bbd5dc9-eb6c-40c1-8f19-c08b4107f654)
+---
 
-## 🛠️ How to Use This Project
+## Project Steps
 
-1. **Clone the repository**
-   ```bash
-   git clone https://github.com/amlanmohanty1/customer-trends-data-analysis-SQL-Python-PowerBI.git
-   cd customer-trends-data-analysis-SQL-Python-PowerBI
-   ```
-2. **Open Customer_Shopping_Behavior_Analysis.ipynb notebook**
+1. **Load Data (Python)**
+   - Read the CSV file into a Pandas DataFrame.
+   - Inspect basic structure (head, info, dtypes, missing values).
 
-    This file contains:
+2. **Exploratory Data Analysis (EDA)**
+   - Descriptive statistics (mean, median, distributions).
+   - Univariate and bivariate analysis (histograms, boxplots, correlations).
+   - Identify trends, patterns, and outliers.
 
-      - Data Import
+3. **Data Cleaning**
+   - Handle missing values (imputation or removal).
+   - Fix data types, remove duplicates, standardize formats.
+   - Create derived/feature columns if needed.
 
-      - Data exploration
+4. **Load into MySQL & SQL Queries**
+   - Create a database and table schema in MySQL.
+   - Load the cleaned dataset into MySQL.
+   - Run SQL queries for:
+     - Filtering and aggregations
+     - Grouped summaries (e.g., by time, category, region)
+     - Joins (if multiple tables are used)
+   - Use these queries to answer specific business questions.
 
-      - Data cleaning
+5. **Power BI Dashboard**
+   - Connect Power BI to the MySQL database (or cleaned CSV extract).
+   - Build visuals such as:
+     - KPI cards (e.g., total revenue, total customers)
+     - Bar/column charts (e.g., top categories)
+     - Time-series charts (e.g., trends over time)
+     - Slicers/filters for interactive exploration
+   - Design a clean, simple layout focused on decision-making.
 
-      - Connection to SQL Database
-  
-3. **Load the data from Python notebook into MySQL/PostgreSQL/MS SQL Server**
+---
 
-      - Create a database in SQL
+## Dashboard
+- The main Power BI report is located at:  
+  `dashboard/Project_Dashboard.pbix`  
 
-      - Run Python code to load data into SQL database
-  
-      - Open **customer_behavior_sql_queries.sql**
-  
-      - Answer Business Questions using SQL Queries 
-      
-4. **Connect the SQL Database to Power BI**
+Key pages (examples):
+- **Overview:** High-level KPIs and trends.
+- **Detail Analysis:** Breakdown by category/segment.
+- **Time Insights:** Performance over time.
 
-      - Open **customer_behavior_dashboard.pbix**
-   
-      - Create interactive dashboard in Power BI
-  
-6. **Create Project Report and Presentation**
+---
 
-      - Create project report
-   
-      - Build presentation deck using Gamma AI
-  
-7. **Follow along with the YouTube video for full walkthrough. 👨‍💼**
+## Results & Insights
+Some example insights you might highlight (replace with your real findings):
 
+- **Trend Insight:** e.g., “Sales peak in Q4, with a 25% increase compared to Q1.”
+- **Segment Insight:** e.g., “Category A contributes 40% of total revenue but has the highest return rate.”
+- **Operational Insight:** e.g., “Region X underperforms despite high customer count, indicating lower average order value.”
 
-## 📜 License
+These results demonstrate how combining Python, SQL, and Power BI can turn raw data into actionable business recommendations.
 
-MIT — feel free to fork, star, and use in your portfolio.
+---
 
-## 👨‍💻 About the Author
-Hey, I’m Amlan Mohanty, a Data Analyst & Content Creator.
-I break down complex data topics into simple, practical content that actually helps you land a job.
+## How to Run This Project
 
- ### 🚀 Stay Connected & Join my Data Community
-If you enjoyed this project and want to keep learning and growing as a data analyst, let’s stay in touch! I regularly share content around SQL, data analytics, portfolio projects, job tips, and more.
+### Prerequisites
+- Python 3.x
+- MySQL Server
+- Power BI Desktop
+- Recommended: virtual environment (venv or conda)
 
-🎥 YouTube: [Amlan Mohanty](https://www.youtube.com/@amlanmohanty1)
-- Beginner-friendly tutorials, real-world projects, job and career advice
-
-📺 Instagram: [datacareerschool](https://www.instagram.com/datacareerschool/)
-- Quick SQL tips, data memes, and behind-the-scenes content
-
-💼 LinkedIn: [Amlan Mohanty](https://www.linkedin.com/in/amlanmohanty1/)
-- Let’s connect professionally and grow your data career
-
-
-## 💡 Thanks for checking out the project! Your support means a lot! Feel free to star ⭐ this repo or share it with someone learning Data Analytics.🚀
+### 1. Clone the Repository
+```bash
+git clone https://github.com/your-username/your-repo-name.git
+cd your-repo-name
